@@ -1,0 +1,10 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core">
+	<Popover title="{Name}" showHeader="false" placement="Bottom" initialFocus="email">
+		<List>
+			<StandardListItem title="Pinky Agarwal"/>
+			<StandardListItem title="Change Password"/>
+			<StandardListItem title="Change Security Questions"/>
+			<StandardListItem title="Logout"/>
+		</List>
+	</Popover>
+</core:FragmentDefinition>

@@ -1,0 +1,10 @@
+<mvc:View height="100%" controllerName="com.uniEmamidemo.controller.firstImage" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m"
+	xmlns:tnt="sap.tnt" xmlns:f="sap.f" class="sapUiSizeCompact loginPageClass">
+	<App id="app">
+		<pages>
+			<Page showHeader="true" title="Internal Financial Control (IFC)" showNavButton="true" navButtonPress="handleNavButtonPress">
+				<content></content>
+			</Page>
+		</pages>
+	</App>
+</mvc:View>

@@ -1,0 +1,118 @@
+<mvc:View height="100%" controllerName="com.uniEmamidemo.controller.secondImage" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m"
+	xmlns:tnt="sap.tnt" xmlns:f="sap.f" class="sapUiSizeCompact" xmlns:l="sap.ui.layout" xmlns:core="sap.ui.core"
+	xmlns:fb="sap.ui.comp.filterbar" xmlns:viz="sap.viz.ui5.controls" xmlns:viz.feeds="sap.viz.ui5.controls.common.feeds"
+	xmlns:viz.data="sap.viz.ui5.data">
+	<tnt:ToolPage id="app" class="sapUiDemoToolPage">
+		<tnt:header >
+			<tnt:ToolHeader visible="{appView>/sideMenuVisible}">
+				<Button icon="sap-icon://nav-back" type="Transparent" press="handleNavButtonPress">
+					<layoutData>
+						<OverflowToolbarLayoutData priority="NeverOverflow"/>
+					</layoutData>
+				</Button>
+				<Image id="logo" src="https://media.biltrax.com/wp-content/uploads/2022/07/1622183920155-emami-logo.png" height="85%" press="goToHomePage"
+					class="sapUiSmallMarginBeginEnd glowOnHover"/>
+				<ToolbarSpacer/>
+				<Title text="My Dashboard"/>
+				<ToolbarSpacer/>
+				<Button icon="sap-icon://sys-help" type="Transparent" press="handleLogoutPress"/>
+				<Button icon="sap-icon://email" type="Transparent" press="handleLogoutPress"/>
+				<Button icon="sap-icon://bell" type="Transparent" press="handleLogoutPress"/>
+				<Image height="2rem" press="handleUserProfilePress"
+					src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/12/User_icon_2.svg/220px-User_icon_2.svg.png" densityAware="false"></Image>
+			</tnt:ToolHeader>
+		</tnt:header>
+		<tnt:sideContent>
+			<tnt:SideNavigation id="sideNavigationList" visible="{appView>/sideMenuVisible}" expanded="false" itemSelect="onItemSelect">
+				<tnt:NavigationList itemSelect="handleNavigationItemPress">
+					<tnt:NavigationListItem text="My Dashboard"></tnt:NavigationListItem>
+					<tnt:NavigationListItem text="My Workspace"></tnt:NavigationListItem>
+					<tnt:NavigationListItem text="Masters">
+						<tnt:NavigationListItem text="Users"/>
+						<tnt:NavigationListItem text="Vertical Master"/>
+						<tnt:NavigationListItem text="Legal Entity"/>
+						<tnt:NavigationListItem text="Observation Category"/>
+						<tnt:NavigationListItem text="Risk Category"/>
+						<tnt:NavigationListItem text="Entities Assignment"/>
+					</tnt:NavigationListItem>
+					<tnt:NavigationListItem text="Audit Reporting System"></tnt:NavigationListItem>
+					<tnt:NavigationListItem text="Audit Closure"></tnt:NavigationListItem>
+					<tnt:NavigationListItem text="My Documents"></tnt:NavigationListItem>
+					<tnt:NavigationListItem text="My Reports"></tnt:NavigationListItem>
+				</tnt:NavigationList>
+			</tnt:SideNavigation>
+		</tnt:sideContent>
+		<tnt:mainContents>
+			<l:BlockLayout class="sapUiResponsiveMargin" background="Accent" id="BlockLayout">
+				<l:BlockLayoutRow accentCells="Accent1">
+					<l:BlockLayoutCell>
+						<FlexBox alignItems="Start" justifyContent="SpaceBetween">
+							<Title text="My Dashboard" class="textClass"/>
+							<HBox>
+								<VBox width="6rem">
+									<core:Icon src="sap-icon://weather-proofing" class="sizeIcon sapUiSmallMarginBegin" color="#E69A17"/>
+									<Text text="Sunny Days" class="sapUiSmallMarginTop"/>
+								</VBox>
+								<VBox>
+									<Text id="timeText" text="11:30:09"/>
+									<Text id="dateText"  text="Jun 13 2023" class="dateClass"/>
+								</VBox>
+							</HBox>
+						</FlexBox>
+					</l:BlockLayoutCell>
+				</l:BlockLayoutRow>
+			</l:BlockLayout>
+			<!--<Panel expandable="true" headerText="Filters : " width="auto" class="sapUiResponsiveMargin">
+				<content>
+					<fb:FilterBar id="filterbar" persistencyKey="myPersKey" useToolbar="false" search=".onSearch" filterChange=".onFilterChange"
+						afterVariantLoad=".onAfterVariantLoad">
+						<fb:filterGroupItems>
+							<fb:FilterGroupItem name="Name" label="Name" groupName="Group1" visibleInFilterBar="true">
+								<fb:control>
+									<MultiComboBox name="Name" selectionChange=".onSelectionChange" items="{ path: '/ProductNames', templateShareable: true }">
+										<core:Item key="{key}" text="{name}"/>
+									</MultiComboBox>
+								</fb:control>
+							</fb:FilterGroupItem>
+							<fb:FilterGroupItem name="Category" label="Category" groupName="Group1" visibleInFilterBar="true">
+								<fb:control>
+									<MultiComboBox name="Category" selectionChange=".onSelectionChange" items="{ path: '/ProductCategories', templateShareable: true }">
+										<core:Item key="{key}" text="{name}"/>
+									</MultiComboBox>
+								</fb:control>
+							</fb:FilterGroupItem>
+							<fb:FilterGroupItem name="SupplierName" label="SupplierName" groupName="Group1" visibleInFilterBar="true">
+								<fb:control>
+									<MultiComboBox name="SupplierName" selectionChange=".onSelectionChange" items="{ path: '/ProductSuppliers', templateShareable: true }">
+										<core:Item key="{key}" text="{name}"/>
+									</MultiComboBox>
+								</fb:control>
+							</fb:FilterGroupItem>
+						</fb:filterGroupItems>
+					</fb:FilterBar>
+				</content>
+			</Panel>
+			<viz:VizFrame id="oVizFrame" width="100%" height="20rem" busy="false" busyIndicatorDelay="1000" visible="true" uiConfig="{ 'applicationSet': 'fiori' }" vizType="column"
+				legendVisible="true">
+				<viz:dataset>
+					<viz.data:FlattenedDataset data="{chartModel>/book}">
+						<viz.data:dimensions>
+							<viz.data:DimensionDefinition name="Item Category" value="{chartModel>Item Category}"/>
+						</viz.data:dimensions>
+						<viz.data:measures>
+							<viz.data:MeasureDefinition group="1" name="Revenue" value="{chartModel>Revenue}"/>
+							<viz.data:MeasureDefinition group="1" name="Cost" value="{chartModel>Cost}"/>
+							<viz.data:MeasureDefinition group="1" name="Profit" value="{chartModel>Profit}"/>
+						</viz.data:measures>
+					</viz.data:FlattenedDataset>
+				</viz:dataset>
+				<viz:feeds>
+					<viz.feeds:FeedItem id="value1" uid="primaryValues" type="Measure" values="Revenue"/>
+					<viz.feeds:FeedItem id="value2" uid="primaryValues" type="Measure" values="Cost"/>
+					<viz.feeds:FeedItem id="value3" uid="primaryValues" type="Measure" values="Profit"/>
+					<viz.feeds:FeedItem uid="categoryAxis" type="Dimension" values="Item Category"/>
+				</viz:feeds>
+			</viz:VizFrame>
+		--></tnt:mainContents>
+	</tnt:ToolPage>
+</mvc:View>

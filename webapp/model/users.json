@@ -1,0 +1,99 @@
+{
+	"UsersSet": [{
+		"slNo": "1",
+		"firstName": "A K",
+		"lastName": "Joshi",
+		"email": "akjoshi@emamigroup.com",
+		"contact": "9383838383",
+		"status": "Non- Admin",
+		"role": "Active"
+	}, {
+		"slNo": "2",
+		"firstName": "Abhijan",
+		"lastName": "Roy",
+		"email": "abhijan@emamigroup.com",
+		"contact": "9867564432",
+		"status": "Non- Admin",
+		"role": "Active"
+	}, {
+		"slNo": "3",
+		"firstName": "Abhijit",
+		"lastName": "Borthakur",
+		"email": "abhijit@emamigroup.com",
+		"contact": "9876543210",
+		"status": "Non- Admin",
+		"role": "Active"
+	}, {
+		"slNo": "4",
+		"firstName": "Abhinav",
+		"lastName": "Kumar",
+		"email": "abhinav@emamigroup.com",
+		"contact": "9986776627",
+		"status": "Non- Admin",
+		"role": "Active"
+	}, {
+		"slNo": "5",
+		"firstName": "Abhishek",
+		"lastName": "Karnani",
+		"email": "abhishekkarnani@emamigroup.com",
+		"contact": "9383838383",
+		"status": "Non- Admin",
+		"role": "Active"
+	}, {
+		"slNo": "6",
+		"firstName": "Abhishek",
+		"lastName": "Banerjee",
+		"email": "abhishek.banerjee@emamigroup.com",
+		"contact": "9873532134",
+		"status": "Non- Admin",
+		"role": "Active"
+	}, {
+		"slNo": "7",
+		"firstName": "Abhishek",
+		"lastName": "Biswas",
+		"email": "abhishek.biswas@emamigroup.com",
+		"contact": "9383838383",
+		"status": "Non- Admin",
+		"role": "Active"
+	}, {
+		"slNo": "8",
+		"firstName": "Abhishek",
+		"lastName": "Bhushan",
+		"email": "abhishek.bhushan@emamigroup.com",
+		"contact": "9383838383",
+		"status": "Non- Admin",
+		"role": "Active"
+	}, {
+		"slNo": "9",
+		"firstName": "Abhishek",
+		"lastName": "pareek",
+		"email": "abhishek.pareek@emamigroup.com",
+		"contact": "8773563336",
+		"status": "Non- Admin",
+		"role": "Active"
+	}, {
+		"slNo": "10",
+		"firstName": "Abhra",
+		"lastName": "Chatterjee",
+		"email": "abhra.chatterjee@emamigroup.com",
+		"contact": "8799965433",
+		"status": "Non- Admin",
+		"role": "Active"
+	}, {
+		"slNo": "11",
+		"firstName": "Abdul",
+		"lastName": "Khair",
+		"email": "abdul.khair@emamigroup.com",
+		"contact": "7676765443",
+		"status": "Non- Admin",
+		"role": "Active"
+	}, {
+		"slNo": "12",
+		"firstName": "Abdul",
+		"lastName": "Raheem",
+		"email": "abdul.Raheem@emamigroup.com",
+		"contact": "9987654654",
+		"status": "Non- Admin",
+		"role": "Active"
+	}]
+}

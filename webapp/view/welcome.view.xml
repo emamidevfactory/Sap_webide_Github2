@@ -1,0 +1,31 @@
+<mvc:View controllerName="com.uniEmamidemo.controller.welcome" xmlns:html="http://www.w3.org/1999/xhtml" xmlns:mvc="sap.ui.core.mvc"
+	displayBlock="true" xmlns="sap.m" xmlns:l="sap.ui.layout" xmlns:core="sap.ui.core">
+	<App>
+		<pages>
+			<Page title="Emami Limited" showNavButton="true" navButtonPress="handleNavButtonPress">
+				<content>
+					<FlexBox height="200px" alignItems="Center" justifyContent="Center">
+						<VBox>
+							<Label text="Welcome To" class="labelClass"/>
+							<Label text="EMAMI" class="labelClass sapUiSmallMarginTop sapUiLargeMarginBegin"/>
+						</VBox>
+					</FlexBox>
+					<FlexBox id="flexBoxId" height="200px" alignItems="Center" justifyContent="Center">
+						<HBox height="100px">
+							<VBox id="firstVboxId" class="vboxColorClass" width="17rem">
+								<core:Icon class="size1" src="sap-icon://line-chart" color="#031E48" press="handleFirstImagePress">
+								</core:Icon>
+								<Title class="sapUiMediumMarginBegin sapUiSmallMarginTop" text="Internal Financial Control (IFC)"/>
+							</VBox>
+							<VBox id="secondVboxId" class="vboxColorClass sapUiLargeMarginBegin" width="17rem">
+								<core:Icon class="size1" src="sap-icon://manager-insight" color="#031E48" press="handleSecondImagePress">
+								</core:Icon>
+								<Title class="sapUiMediumMarginBegin sapUiSmallMarginTop" text="Audit Reporting System (ARS)"/>
+							</VBox>
+						</HBox>
+					</FlexBox>
+				</content>
+			</Page>
+		</pages>
+	</App>
+</mvc:View>

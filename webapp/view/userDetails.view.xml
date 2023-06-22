@@ -1,0 +1,205 @@
+<!--<mvc:View controllerName="com.uniEmamidemo.controller.userDetails" xmlns:html="http://www.w3.org/1999/xhtml" xmlns:mvc="sap.ui.core.mvc"
+	displayBlock="true" xmlns="sap.m" xmlns:f="sap.ui.layout.form" xmlns:l="sap.ui.layout" xmlns:core="sap.ui.core">
+	<App id="app" class="sapUiSizeCompact">
+		<pages>
+			<Page title="Users Management" showNavButton="true" navButtonPress="handleNavButtonPress">
+				<content>
+					<Table id="usersTableId" growing="true" growingThreshold="10" inset="false" items="{ path: 'usersModel>/UsersSet'}">
+						<headerToolbar>
+							<Toolbar>
+								<content>
+									<Title text="Users" level="H2"/>
+									<ToolbarSpacer/>
+									<ComboBox width="10rem"  placeholder="Select Customer" change="onPopinLayoutChanged">
+										<items>
+											<core:Item text="Internal Customer" key="Internal Custome"/>
+											<core:Item text="External Custome" key="External Custome"/>
+											<core:Item text="Foreign Custome" key="Foreign Custome"/>
+										</items>
+									</ComboBox>
+									<SearchField liveChange="handleSearch"  width="12rem"  placeholder="Type To Search"/>
+									<Button text="Add New" type="Emphasized" press="handleAddNewCustomer"/>
+								</content>
+							</Toolbar>
+						</headerToolbar>
+						<columns>
+							<Column width="3rem">
+								<Text text="Sl No."/>
+							</Column>
+							<Column>
+								<Text text="First Name"/>
+							</Column>
+							<Column>
+								<Text text="Last Name"/>
+							</Column>
+							<Column width="18rem">
+								<Text text="Email"/>
+							</Column>
+							<Column>
+								<Text text="Contact"/>
+							</Column>
+							<Column>
+								<Text text="Role"/>
+							</Column>
+							<Column>
+								<Text text="Status"/>
+							</Column>
+							<Column>
+								<Text text="Action"/>
+							</Column>
+						</columns>
+						<items>
+							<ColumnListItem vAlign="Middle">
+								<cells>
+									<Text text="{usersModel>slNo}"/>
+									<Text text="{usersModel>firstName}"/>
+									<Text text="{usersModel>lastName}"/>
+									<Text text="{usersModel>email}"/>
+									<Text text="{usersModel>contact}"/>
+									<Text text="{usersModel>status}"/>
+									<Text text="{usersModel>role}"/>
+									<HBox>
+										<Button icon="sap-icon://edit" type="Transparent"/>
+										<Button icon="sap-icon://delete" type="Transparent"/>
+										<Button icon="sap-icon://user-settings" type="Transparent"/>
+									</HBox>
+								</cells>
+							</ColumnListItem>
+						</items>
+					</Table>
+				</content>
+			</Page>
+		</pages>
+	</App>
+</mvc:View>-->
+<mvc:View height="100%" controllerName="com.uniEmamidemo.controller.userDetails" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m"
+	xmlns:tnt="sap.tnt" xmlns:f="sap.f" class="sapUiSizeCompact" xmlns:l="sap.ui.layout" xmlns:core="sap.ui.core"
+	xmlns:fb="sap.ui.comp.filterbar">
+	<tnt:ToolPage id="app" class="sapUiDemoToolPage">
+		<tnt:header >
+			<tnt:ToolHeader visible="{appView>/sideMenuVisible}">
+				<Button icon="sap-icon://nav-back" type="Transparent" press="handleNavButtonPress">
+					<layoutData>
+						<OverflowToolbarLayoutData priority="NeverOverflow"/>
+					</layoutData>
+				</Button>
+				<Image id="logo" src="https://media.biltrax.com/wp-content/uploads/2022/07/1622183920155-emami-logo.png" height="85%" press="goToHomePage"
+					class="sapUiSmallMarginBeginEnd glowOnHover"/>
+				<ToolbarSpacer/>
+				<Title text="My Dashboard"/>
+				<ToolbarSpacer/>
+				<Button icon="sap-icon://sys-help" type="Transparent" press="handleLogoutPress"/>
+				<Button icon="sap-icon://email" type="Transparent" press="handleLogoutPress"/>
+				<Button icon="sap-icon://bell" type="Transparent" press="handleLogoutPress"/>
+				<Image height="2rem" press="handleUserProfilePress"
+					src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/12/User_icon_2.svg/220px-User_icon_2.svg.png" densityAware="false"></Image>
+				<Text text="Pinky Agarwal"/>
+			</tnt:ToolHeader>
+		</tnt:header>
+		<tnt:sideContent>
+			<tnt:SideNavigation id="sideNavigationList" visible="{appView>/sideMenuVisible}" expanded="false" itemSelect="onItemSelect">
+				<tnt:NavigationList itemSelect="handleNavigationItemPress">
+					<tnt:NavigationListItem text="Home"></tnt:NavigationListItem>
+					<tnt:NavigationListItem text="My Dashboard"></tnt:NavigationListItem>
+					<tnt:NavigationListItem text="My Workspace"></tnt:NavigationListItem>
+					<tnt:NavigationListItem text="Masters" expanded="false">
+						<tnt:NavigationListItem text="Users"/>
+						<tnt:NavigationListItem text="Vertical Master"/>
+						<tnt:NavigationListItem text="Legal Entity"/>
+						<tnt:NavigationListItem text="Observation Category"/>
+						<tnt:NavigationListItem text="Risk Category"/>
+						<tnt:NavigationListItem text="Entities Assignment"/>
+					</tnt:NavigationListItem>
+					<tnt:NavigationListItem text="Audit Reporting System"></tnt:NavigationListItem>
+					<tnt:NavigationListItem text="Audit Closure"></tnt:NavigationListItem>
+					<tnt:NavigationListItem text="My Documents"></tnt:NavigationListItem>
+					<tnt:NavigationListItem text="My Reports"></tnt:NavigationListItem>
+				</tnt:NavigationList>
+			</tnt:SideNavigation>
+		</tnt:sideContent>
+		<tnt:mainContents>
+			<l:BlockLayout class="sapUiResponsiveMargin" background="Accent" id="BlockLayout">
+				<l:BlockLayoutRow accentCells="Accent1">
+					<l:BlockLayoutCell>
+						<FlexBox alignItems="Start" justifyContent="SpaceBetween">
+							<Title text="Users" class="textClass"/>
+							<HBox>
+								<VBox width="6rem">
+									<core:Icon src="sap-icon://weather-proofing" class="sizeIcon sapUiSmallMarginBegin" color="#E69A17"/>
+									<Text text="Sunny Days" class="sapUiSmallMarginTop"/>
+								</VBox>
+								<VBox>
+									<Text id="timeTextUser" text="11:30:09"/>
+									<Text id="dateTextUser"  text="Jun 13 2023" class="dateClass"/>
+								</VBox>
+							</HBox>
+						</FlexBox>
+					</l:BlockLayoutCell>
+				</l:BlockLayoutRow>
+			</l:BlockLayout>
+			<Table id="usersTableId" growing="true" growingThreshold="10" inset="false" items="{ path: 'usersModel>/UsersSet'}">
+						<headerToolbar>
+							<Toolbar>
+								<content>
+									<Title text="Users" level="H2"/>
+									<ToolbarSpacer/>
+									<ComboBox width="10rem"  placeholder="Select Customer" change="onPopinLayoutChanged">
+										<items>
+											<core:Item text="Internal Customer" key="Internal Custome"/>
+											<core:Item text="External Custome" key="External Custome"/>
+											<core:Item text="Foreign Custome" key="Foreign Custome"/>
+										</items>
+									</ComboBox>
+									<SearchField liveChange="handleSearch"  width="12rem"  placeholder="Type To Search"/>
+									<Button text="Add New" type="Emphasized" press="handleAddNewCustomer"/>
+								</content>
+							</Toolbar>
+						</headerToolbar>
+						<columns>
+							<Column width="3rem">
+								<Text text="Sl No."/>
+							</Column>
+							<Column>
+								<Text text="First Name"/>
+							</Column>
+							<Column>
+								<Text text="Last Name"/>
+							</Column>
+							<Column width="18rem">
+								<Text text="Email"/>
+							</Column>
+							<Column>
+								<Text text="Contact"/>
+							</Column>
+							<Column>
+								<Text text="Role"/>
+							</Column>
+							<Column>
+								<Text text="Status"/>
+							</Column>
+							<Column>
+								<Text text="Action"/>
+							</Column>
+						</columns>
+						<items>
+							<ColumnListItem vAlign="Middle">
+								<cells>
+									<Text text="{usersModel>slNo}"/>
+									<Text text="{usersModel>firstName}"/>
+									<Text text="{usersModel>lastName}"/>
+									<Text text="{usersModel>email}"/>
+									<Text text="{usersModel>contact}"/>
+									<Text text="{usersModel>status}"/>
+									<Text text="{usersModel>role}"/>
+									<HBox>
+										<Button icon="sap-icon://edit" type="Transparent"/>
+										<Button icon="sap-icon://delete" type="Transparent"/>
+										<Button icon="sap-icon://user-settings" type="Transparent"/>
+									</HBox>
+								</cells>
+							</ColumnListItem>
+						</items>
+					</Table>
+			</tnt:mainContents>
+	</tnt:ToolPage>
+</mvc:View>

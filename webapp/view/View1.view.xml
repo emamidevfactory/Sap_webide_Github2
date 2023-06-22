@@ -1,0 +1,73 @@
+<mvc:View controllerName="com.uniEmamidemo.controller.View1" xmlns:html="http://www.w3.org/1999/xhtml" xmlns:mvc="sap.ui.core.mvc"
+	displayBlock="true" xmlns="sap.m" xmlns:f="sap.ui.layout.form" xmlns:l="sap.ui.layout">
+	<App id="app">
+		<pages>
+			<Page showHeader="false">
+				<content>
+					<l:BlockLayout background="Accent" id="BlockLayout">
+						<l:BlockLayoutRow accentCells="Accent1">
+							<l:BlockLayoutCell class="blockcellClass blockcellClassForColor" width="2">
+								<Image src="https://assets.gadgets360cdn.com/pricee/assets/category/202006/cp-banner-emami-1280x250_1591164993.jpg?downsize=:*"
+									width="53.2rem" height="40rem"/>
+							</l:BlockLayoutCell>
+							<l:BlockLayoutCell class="blockcellClass">
+								<FlexBox height="100px" class="sapUiSmallMarginBottom" alignItems="End" justifyContent="Center">
+									<ObjectIdentifier title="User Login"/>
+								</FlexBox>
+								<f:SimpleForm id="loginForm" editable="true" layout="ResponsiveGridLayout" labelSpanXL="3" labelSpanL="3" labelSpanM="3" labelSpanS="12"
+									adjustLabelSpan="false" emptySpanXL="4" emptySpanL="4" emptySpanM="4" emptySpanS="0" columnsXL="1" columnsL="1" columnsM="1"
+									singleContainerFullSize="false">
+									<f:content>
+										<Label text="User Name" class="textClass"/>
+										<Input id="username" value="{/username}" placeholder="Username"/>
+										<Label text="Password" class="textClass"/>
+										<Input id="password" value="{/password}" type="Password" placeholder="Password"/>
+										<Label text="" class="textClass"/>
+										<Button text="Login" type="Emphasized" press=".onLoginPress"/>
+										<Label text="" class="textClass"/>
+										<FlexBox alignItems="Start" justifyContent="Center">
+											<Link text="Forgot Password" press=".onForgotPasswordPress" class="textClass"/>
+										</FlexBox>
+									</f:content>
+								</f:SimpleForm>
+								<f:SimpleForm id="forgotPasswordForm" editable="true" layout="ResponsiveGridLayout" labelSpanXL="3" labelSpanL="3" labelSpanM="3"
+									labelSpanS="12" adjustLabelSpan="false" emptySpanXL="4" emptySpanL="4" emptySpanM="4" emptySpanS="0" columnsXL="1" columnsL="1" columnsM="1"
+									singleContainerFullSize="false" visible="false">
+									<f:content>
+										<Label text="Mobile Number" class="textClass"/>
+										<Input type="Number" id="mobile" placeholder="Enter the Mobile Number"/>
+										<Label text="OTP" class="textClass"/>
+										<Input id="otp" visible="false" type="Password" maxLength="6" placeholder="Enter the OTP"/>
+										<Label text="" class="textClass"/>
+										<Button id="generateOTP" text="Generate OTP" type="Emphasized" press=".onGenerateOTPPress"/>
+										<Button id="loginButton" visible="false" text="Change Password" type="Emphasized" press=".onChangePasswordPress"/>
+										<Label text=""/>
+										<FlexBox height="100px" alignItems="Start" justifyContent="Center">
+											<Link text="Back to Sign in" press=".onBacktoSigninPress" class="textClass"/>
+										</FlexBox>
+									</f:content>
+								</f:SimpleForm>
+								<f:SimpleForm id="confirmPasswordForm" editable="true" layout="ResponsiveGridLayout" labelSpanXL="3" labelSpanL="3" labelSpanM="3"
+									labelSpanS="12" adjustLabelSpan="false" emptySpanXL="4" emptySpanL="4" emptySpanM="4" emptySpanS="0" columnsXL="1" columnsL="1" columnsM="1"
+									singleContainerFullSize="false" visible="false">
+									<f:content>
+										<Label text="New Password" class="textClass"/>
+										<Input  placeholder="Enter the New Password"/>
+										<Label text="Confirm Password" class="textClass"/>
+										<Input  placeholder="Confirm the Password"/>
+										<Label text=""/>
+										<Button text="Login and Continue" type="Emphasized" press=".onConfirmLoginPress"/>
+										<Label text=""/>
+										<FlexBox height="100px" alignItems="Start" justifyContent="Center">
+											<Link text="Back to Sign in" press=".onBacktoSigninPress" class="textClass"/>
+										</FlexBox>
+									</f:content>
+								</f:SimpleForm>
+							</l:BlockLayoutCell>
+						</l:BlockLayoutRow>
+					</l:BlockLayout>
+				</content>
+			</Page>
+		</pages>
+	</App>
+</mvc:View>

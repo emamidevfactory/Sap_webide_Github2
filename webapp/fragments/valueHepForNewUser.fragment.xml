@@ -1,0 +1,62 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core" xmlns:l="sap.ui.layout" xmlns:f="sap.ui.layout.form"
+xmlns:u="sap.ui.unified">
+	<Dialog title="Add User" contentWidth="50%">
+		<endButton>
+			<Button text="Close" press="handleUserCancelPress"/>
+		</endButton>
+		<beginButton>
+			<Button text="Add" press="handleAddUsersDataPress" type="Emphasized"/>
+		</beginButton>
+		<f:SimpleForm minWidth="1024" maxContainerCols="2" editable="true" layout="ResponsiveGridLayout" labelSpanL="3" labelSpanM="3"
+			emptySpanL="4" emptySpanM="4" columnsL="1" columnsM="1">
+			<f:content>
+				<Label text="First Name" required="true"/>
+				<Input/>
+				<Label text="Last Name" required="true"/>
+				<Input/>
+				<Label text="Designation" required="true"/>
+				<Input/>
+				<Label text="Email" required="true"/>
+				<Input/>
+				<Label text="Contact No" required="true"/>
+				<Input/>
+				<Label text="Department" required="true"/>
+				<Select forceSelection="false">
+					<core:Item text="IT" key="IT"/>
+					<core:Item text="Telecommunication" key="Telecommunication"/>
+					<core:Item text="Sales" key="Sales"/>
+				</Select>
+				<Label text="Is Department Head" required="true"/>
+				<RadioButtonGroup columns="2">
+					<RadioButton text="Yes"/>
+					<RadioButton text="No"/>
+				</RadioButtonGroup>
+				<Label text="Is Audit Head" required="true"/>
+				<RadioButtonGroup columns="2">
+					<RadioButton text="Yes"/>
+					<RadioButton text="No"/>
+				</RadioButtonGroup>
+				<Label text="Is Audit Manager" required="true"/>
+				<RadioButtonGroup columns="2">
+					<RadioButton text="Yes"/>
+					<RadioButton text="No"/>
+				</RadioButtonGroup>
+					<Label text="Audit Role" required="true"/>
+				<Select forceSelection="false">
+					<core:Item text="Admin" key="Admin"/>
+					<core:Item text="Manager" key="Manager"/>
+					<core:Item text="Junior" key="Junior"/>
+				</Select>
+				<Label text="Address"/>
+				<TextArea rows="2"/>
+				<Label text="Pofile Picture"/>
+				<u:FileUploader
+			id="fileUploader"
+			name="myFileUpload"
+			uploadUrl="upload/"
+			tooltip="Upload your file to the local server"
+			uploadComplete="handleUploadComplete"/>
+			</f:content>
+		</f:SimpleForm>
+	</Dialog>
+</core:FragmentDefinition>

@@ -1,0 +1,37 @@
+/* Enter your custom styles here */
+/*.myPage {
+  background-color: #FFA07A;
+}*/
+.blockcellClass{
+	margin: 0rem 0rem!important;
+	height: 40rem;
+}
+.blockcellClassForColor{
+	background-color: silver!important;
+}
+.textClass{
+	color:white !important;
+}
+.logintitleClass{
+	color: floralwhite!important;
+}
+.blockcellClass>.sapUiBlockCellContent {
+	padding: 0rem 0rem 0rem 0rem!important;
+}
+.labelClass {
+	    font-size: 2.875rem;
+}
+.vboxColorClass{
+	background-color: lightskyblue;
+}
+.size1 {
+	font-size : 1.5rem;
+	    padding-left: 7.5rem;
+    padding-top: 1rem;
+}
+.sizeIcon {
+	font-size : 1.5rem;
+}
+.dateClass{
+	margin-top : 1.7rem;
+}
